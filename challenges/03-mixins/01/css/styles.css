@@ -1,0 +1,75 @@
+body {
+  font-family: system-ui;
+  margin: 0;
+}
+
+.section-one,
+.section-two,
+.section-three {
+  text-align: center;
+  padding: 10vh 0;
+}
+
+.section-one {
+  background: linear-gradient(45deg, #f06, #f90);
+}
+
+.section-two {
+  background: linear-gradient(45deg, #f90, #f06);
+}
+
+.section-three {
+  background: linear-gradient(90deg, #f06, #f90);
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 10rem;
+  height: 2px;
+  background: black;
+  margin-inline: auto;
+  margin-block: 0;
+}
+
+.button-one {
+  padding: 1rem;
+  color: white;
+  background: #f06;
+}
+.button-one:hover {
+  color: #f06;
+  background: white;
+}
+
+.button-two {
+  padding: 0.5rem;
+  color: white;
+  background: #f90;
+}
+.button-two:hover {
+  color: #f90;
+  background: white;
+}
+
+.badge-one {
+  padding: 0.5rem;
+  color: white;
+  background: #f06;
+}
+.badge-one:hover {
+  color: #f06;
+  background: white;
+}
+
+.badge-two {
+  padding: 0.5rem;
+  color: white;
+  background: #f90;
+}
+.badge-two:hover {
+  color: #f90;
+  background: white;
+}
+
+/*# sourceMappingURL=styles.css.map */

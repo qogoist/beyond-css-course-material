@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+body {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  color: #1f3049;
+  background-color: #fff;
+}
+
+.container {
+  width: min(100% - 2rem, 60rem);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.inverted {
+  background: #0066ff;
+  color: #fff;
+}
+
+.page-title {
+  color: #0066ff;
+  font-size: 3.75rem;
+  margin-block: 2rem;
+}
+
+.pricing-plans {
+  border: 0.5rem solid #0066ff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tier {
+  padding: 2.25rem;
+  display: grid;
+  gap: 1.25rem;
+}
+.tier__title {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #0066ff;
+}
+.inverted .tier__title {
+  color: #fff;
+}
+.tier__features {
+  list-style: none;
+}
+.tier__feature-item:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-block: 1.25rem;
+  background: #1f3049;
+  opacity: 0.2;
+}
+.tier__price {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.tier__price span {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.btn {
+  cursor: pointer;
+  border: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  background: #0066ff;
+  padding: 1em 1.5em;
+  justify-self: center;
+}
+.inverted .btn {
+  background: #fff;
+  color: #0066ff;
+}
+.btn:hover, .btn:focus-visible {
+  color: #fff;
+  background: rgba(31, 48, 73, 0.7);
+}
+
+/*# sourceMappingURL=style.css.map */

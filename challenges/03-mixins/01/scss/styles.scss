@@ -9,3 +9,59 @@ body {
   text-align: center;
   padding: 10vh 0;
 }
+
+// Part one: Gradients
+@mixin gradient($color1, $color2, $angle: 45deg) {
+  background: linear-gradient($angle, $color1, $color2);
+}
+
+.section-one {
+  @include gradient(#f06, #f90);
+}
+.section-two {
+  @include gradient(#f90, #f06);
+}
+.section-three {
+  @include gradient(#f06, #f90, 90deg);
+}
+
+// Part two: Pseudo-elements
+@mixin pseudo_underline($width, $height, $background-color, $margin) {
+  content: "";
+  display: block;
+  width: $width;
+  height: $height;
+  background: $background-color;
+  margin-inline: auto;
+  margin-block: $margin;
+}
+
+.title::after  {
+  @include pseudo_underline(10rem, 2px, black, 0);
+}
+
+@mixin ui-element($size, $color, $bg-color, $hover-color, $hover-bg-color) {
+  padding: $size;
+  color: $color;
+  background: $bg-color;
+
+  &:hover {
+    color: $hover-color;
+    background: $hover-bg-color;
+  }
+}
+
+.button-one {
+  @include ui-element(1rem, white, #f06, #f06, white);
+}
+
+.button-two {
+  @include ui-element(.5rem, white, #f90, #f90, white);
+}
+
+.badge-one {
+  @include ui-element(.5rem, white, #f06, #f06, white);
+}
+.badge-two {
+  @include ui-element(.5rem, white, #f90, #f90, white);
+}

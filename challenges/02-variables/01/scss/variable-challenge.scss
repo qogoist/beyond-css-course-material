@@ -3,6 +3,12 @@
   margin: 0;
 }
 
+$clr-white: #f8f7f7;
+$clr-black: #201e1f;
+$clr-red: #da3f0b;
+
+$br: .5rem;
+
 body {
   font-size: 1.75rem;
   font-family: system-ui, sans-serif;
@@ -12,6 +18,9 @@ body {
   display: grid;
   height: 100vh;
   place-items: center;
+
+  background: $clr-white;
+  color: $clr-black;
 }
 
 .card {
@@ -19,12 +28,32 @@ body {
   gap: 0.75em;
   width: min(90%, 60rem);
   padding: 2em;
+
+  box-shadow: $clr-black 0 0 1rem;
+  border-radius: $br;
 }
 
 .btn {
   display: inline-block;
   padding: 0.5em 1.5em;
   text-decoration: none;
+  border-radius: $br;
+
+  &--primary {
+    background: $clr-red;
+    color: $clr-white;
+  }
+  &--outline {
+    background: $clr-white;
+    border: 2px solid $clr-red;
+    color: $clr-red;
+  }
+
+  &:hover {
+    color: $clr-white;
+    background: $clr-black;
+    box-shadow: $clr-red 0 0 1rem;
+  }
 }
 
 .flex-group {
