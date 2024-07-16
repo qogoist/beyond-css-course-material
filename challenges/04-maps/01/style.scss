@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:meta";
 
 $breakpoints: (
   small: 30em,
@@ -8,6 +9,17 @@ $breakpoints: (
 );
 
 @mixin mq($size) {
+  @debug $size, meta.type-of($size);
+
+  @if not map.has-key($breakpoints, $size) and not (meta.type-of($size) == number) {
+    @error "Breakpoint not found.";
+  }
+
+  @if meta.type-of($size) == number and unitless($size) {
+    @error "Breakpoint must have a unit.";
+  }
+
+
   $breakpoint: map.get($breakpoints, $size);
 
   @media screen and (min-width: $breakpoint) {
@@ -28,10 +40,10 @@ body {
   }
 
   // these should fail, with an error telling me why
-  @include mq(reallysmall) {
-    background: yellow;
-  }
-  @include mq(5000) {
-    background: purple;
-  }
+  // @include mq(reallysmall) {
+  //   background: yellow;
+  // }
+  // @include mq(5000) {
+  //   background: purple;
+  // }
 }

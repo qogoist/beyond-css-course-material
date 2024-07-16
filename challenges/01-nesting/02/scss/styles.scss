@@ -16,6 +16,33 @@ body {
 
 .btn {
   /* your code starts here */
+  display: inline-block;
+  padding: 1em 2em;
+  cursor: pointer;
+  border: 0;
+  text: {
+    decoration: none;
+    transform: uppercase;
+  }
+  color: white;
 
+  &__primary {
+    background: $clr-primary-500;
+    &:hover, &:focus {
+      background: $clr-primary-400;
+    }
+  }
+  &__secondary {
+    background: $clr-secondary-500;
+    &:hover, &:focus {
+      background: $clr-secondary-400;
+    }
+  }
+  &__accent {
+    background: $clr-accent-500;
+    &:hover, &:focus {
+      background: $clr-accent-400;
+    }
+  }
   /* your code ends here */
 }
